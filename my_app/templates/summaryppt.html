@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PowerPoint Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 2em;
+        }
+        a {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PowerPoint Summary</h1>
+
+    <h2>Original Content</h2>
+    <p>{{ original_content }}</p>
+
+    <h2>Summarized Content</h2>
+    <p>{{ summarized_content }}</p>
+
+    <a href="{% url 'upload' %}">Go Back</a>
+
+</body>
+</html>

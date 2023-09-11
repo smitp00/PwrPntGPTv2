@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Files</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 2em;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 1em;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+    </style>
+    <script>
+        // File Type and Size Validation
+        function validateFileInput(fileInput) {
+            var file = fileInput.files[0];
+            var maxSize = 5 * 1024 * 1024; // 5 MB
+            
+            // Check File Type
+            if (file.type !== 'application/vnd.openxmlformats-officedocument.presentationml.presentation' && 
+                file.type !== 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+                alert('Invalid file type. Please upload a PowerPoint or Word document.');
+                fileInput.value = '';
+                return false;
+            }
+            
+            // Check File Size
+            if (file.size > maxSize) {
+                alert('File size exceeds 5MB. Please upload a smaller file.');
+                fileInput.value = '';
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to PwrPnt GPT v2.0</h1>
+    <h2>Please upload a Powerpoint (.pptx) or Word Document (.docx) for Summarization Magic!</h2>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="ppt_file" id="pptFile" onchange="validateFileInput(this)">
+        <button type="submit">Upload PowerPoint File</button>
+    </form>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="word_file" id="wordFile" onchange="validateFileInput(this)">
+        <button type="submit">Upload Word Document</button>
+    </form>
+
+</body>
+</html>
