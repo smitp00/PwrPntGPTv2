@@ -37,7 +37,7 @@ SECRET_KEY = 'django-insecure-$)(7yoe8qz!z(y8*2%&9h)-8*mwk59j@%7*y6^8qc%g@6lcjuq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.167.217.148', 'localhost', '127.0.0.1']
 
 #AWS S3 Configurations
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
