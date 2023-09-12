@@ -39,7 +39,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['54.167.217.148', 'localhost', '127.0.0.1']
 
-#AWS S3 Configurations
+#AWS S3 Configurations iwth keys, storage bucketname and domain
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'pwrpntgptbucket'
