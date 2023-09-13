@@ -15,14 +15,14 @@ import os
 from pathlib import Path
 from decouple import config
 
-###CONFIGUERING THE keys.env file which contains the keys - START
+# CONFIGUERING the keys.env file which contains the keys - START
 env_path = Path('.') / 'keys.env'
 
 with open(env_path, 'r') as f:
     for line in f.readlines():
         key, value = line.strip().split('=', 1)
         os.environ[key] = value
-###CONFIGUERING THE keys.env file which contains the keys - END
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
