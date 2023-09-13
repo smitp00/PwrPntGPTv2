@@ -17,6 +17,15 @@
             color: white;
             border: none;
         }
+
+        .ppt-button {
+            background-color: #eb660d; /* orange for PowerPoint button */
+        }
+
+        .word-button {
+            background-color: #007bff; /* blue for Word button */
+        }
+    
     </style>
     <script>
         // File Type and Size Validation
@@ -50,13 +59,13 @@
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="file" name="ppt_file" id="pptFile" onchange="validateFileInput(this)">
-        <button type="submit">Upload PowerPoint File</button>
+        <button class="ppt-button" type="submit">Upload PowerPoint File</button>
     </form>
 
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="file" name="word_file" id="wordFile" onchange="validateFileInput(this)">
-        <button type="submit">Upload Word Document</button>
+        <button class="word-button" type="submit">Upload Word Document</button>
     </form>
 
 </body>
