@@ -3,6 +3,7 @@ import requests
 import json
 from decouple import config
 
+#intakes string content and reaches out to OpenAI GPT-4 API to summarize the content and returns the summary string
 def get_summary_from_gpt(content):
     api_key = config('GPT_API_KEY')
     headers = {

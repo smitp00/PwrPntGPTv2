@@ -25,6 +25,7 @@ def download_file_from_s3(filename):
         s3_client.download_file('pwrpntgptbucket', filename, f.name)
         return f.name
 
+#Activates from post request and user-inputted ppt or word files
 def upload(request):
     if request.method == 'POST':
         ppt_file = request.FILES.get('ppt_file')
