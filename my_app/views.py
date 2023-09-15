@@ -51,7 +51,7 @@ def upload(request):
                             for row in shape.table.rows:
                                 for cell in row.cells:
                                     slides_text.append(cell.text)
-
+                                
                 if not slides_text:
                     return render(request, 'error.html', {'error_message': 'The presentation appears to be empty.'})
                 
